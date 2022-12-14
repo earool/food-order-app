@@ -1,8 +1,13 @@
-const App = () => {
+import React from 'react';
+
+import Header from './Header/Header';
+
+function App() {
   return (
-    <div>
-      Hello World!
-    </div>
+    <>
+      <Header />
+      <div>Hello</div>
+    </>
   );
 }
 
