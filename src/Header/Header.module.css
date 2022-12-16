@@ -1,6 +1,6 @@
 .header {
   height: 4rem;
-  background-color: #818cf8;
+  background-color: var(--light-blue);
   color: white;
 
   position: sticky;

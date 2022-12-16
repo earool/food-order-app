@@ -1,5 +1,7 @@
 :root {
   font-size: 22px;
+  --dark-blue: #4338ca;
+  --light-blue: #818cf8;
 }
 
 * {
@@ -14,6 +16,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: lightblue; /* placeholder */
 }
 
 code {
