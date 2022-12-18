@@ -1,19 +1,23 @@
 import React from 'react';
 
 import MealItem from './MealItem';
+import DUMMY_MEALS from '../dummyMeals';
 import styles from './MealsSummary.module.css';
 
-import DUMMY_MEALS from '../dummyMeals';
-
 function MealsSummary() {
-  const listItems = DUMMY_MEALS.map(() => <MealItem />);
-
+  const mealList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      key={meal.id}
+      name={meal.name}
+      desc={meal.description}
+      price={meal.price}
+    />
+  ));
   return (
     <div className={`${styles['summary-container']}`}>
       <div className={`${styles['round-border']} ${styles['upper-container']}`}>
         <h3>
           Delicious Food!
-          {' '}
           <p>Delievered to You!</p>
         </h3>
         <p>
@@ -23,7 +27,9 @@ function MealsSummary() {
         </p>
       </div>
       <div className={`${styles['round-border']} ${styles['lower-container']}`}>
-        <ul>{listItems}</ul>
+        <ul>
+          {mealList}
+        </ul>
       </div>
     </div>
   );

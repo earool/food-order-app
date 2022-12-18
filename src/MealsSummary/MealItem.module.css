@@ -1,4 +1,63 @@
 .item-container {
   border-bottom: 2px solid #ccc;
-  margin: 0.5rem 0;
+  padding-bottom: 0.5rem;
+  margin-top: 0.5rem;
+
+  font-size: 0.8rem;
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-container > form {
+  font-size: 0.9em;
+  font-weight: bold;
+
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-container > form > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.item-container > form input {
+  font-size: 0.8rem;
+  width: 35px;
+  padding: 0 0.1em;
+  border: #eee 1px solid;
+}
+
+.item-container > form button {
+  width: 90%;
+  align-self: center;
+  background: brown;
+  color: white;
+  border: transparent;
+  padding: 0.2rem;
+  border-radius: 20px;
+  margin-top: 0.3em;
+
+}
+
+/* Right side */
+
+.item-container > div {
+}
+
+.item-container > div > h3 {
+  font-size: 0.9em;
+}
+
+.item-container > div > p:first-of-type {
+  font-size: 0.8em;
+}
+
+.item-container > div > p:last-child {
+  font-size: 1em;
+  color: brown;
+  font-weight: bold;
 }
