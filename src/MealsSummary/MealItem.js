@@ -13,7 +13,6 @@ function MealItem(props) {
     const inputId = input.id;
     ctx.addItem(inputId, inputValue);
     input.value = '0';
-    console.log(ctx);
   };
   return (
     <li className={styles['item-container']}>

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Header from './Header/Header';
 import MealsSummary from './MealsSummary/MealsSummary';
 import CartContext from './store/cart-context';
+import Modal from './Modal/Modal';
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -14,29 +15,32 @@ function App() {
     m4: 0,
   });
 
+  const [modalOn, setModalOn] = useState(false);
+
+  const modalOnHanlder = () => {
+    setModalOn((prev) => (prev === false));
+  };
+
   // eslint-disable-next-line no-unused-vars
   function addItem(id, value) {
-    console.log(amounts);
     setAmounts((prev) => {
       const newAmount = +prev[id] + +value;
-      console.log(`${id}: ${value}`);
       return ({
         ...prev,
         [id]: newAmount,
       });
     });
+    console.log(amounts);
   }
 
   return (
     <CartContext.Provider
       value={{
-        m1: amounts.m1,
-        m2: amounts.m2,
-        m3: amounts.m3,
-        m4: amounts.m4,
         addItem,
+        modalOnHanlder,
       }}
     >
+      { modalOn && <Modal />}
       <Header />
       <MealsSummary />
     </CartContext.Provider>
