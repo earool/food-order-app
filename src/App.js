@@ -14,23 +14,23 @@ function App() {
     m3: 0,
     m4: 0,
   });
-
   const [modalOn, setModalOn] = useState(false);
 
   const modalOnHanlder = () => {
     setModalOn((prev) => (prev === false));
   };
 
-  // eslint-disable-next-line no-unused-vars
   function addItem(id, value) {
     setAmounts((prev) => {
-      const newAmount = +prev[id] + +value;
+      let newAmount = +prev[id] + +value;
+      if (newAmount < 0) {
+        newAmount = 0;
+      }
       return ({
         ...prev,
         [id]: newAmount,
       });
     });
-    console.log(amounts);
   }
 
   return (
@@ -38,6 +38,7 @@ function App() {
       value={{
         addItem,
         modalOnHanlder,
+        amounts,
       }}
     >
       { modalOn && <Modal />}
